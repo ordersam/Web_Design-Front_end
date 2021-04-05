@@ -1,0 +1,7 @@
+"backcolor": #F2F2F2, 
+"pink1": #FF55BE, 
+"colyellow": #F9F6E5, 
+"colblue": #C2EFFF, 
+"colgreen": #EBFFE3, 
+"pink2": #FF7BAC,
+"pink3": #F7EEEE
