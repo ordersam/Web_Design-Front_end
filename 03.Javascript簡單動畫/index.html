@@ -12,6 +12,8 @@
     <script src="./assets/dist/bs_new/bootstrap.min.js"></script>
 
     <script src="https://kit.fontawesome.com/d88869e178.js" crossorigin="anonymous"></script>
+
+    <link href="./cursor.css" rel="stylesheet" type="text/css">
 </head>
 </head>
 <body class="bg-backcolor" onload="init();">
@@ -112,11 +114,24 @@
                 }
 
                 function init() {
-                    console.log()
                     getMove(speed);
+                    // ============== cursor ==============
+                    const cursor = document.querySelector('.cursor');
+                    // 滑鼠移動事件 要找到cursor在頁面的位置(pageX、pageY)
+                    document.addEventListener('mousemove', e => {
+                        //console.log(e);
+                        cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
+                    })
+                    document.addEventListener('click', () => {
+                        cursor.classList.add("expand");
+                        setTimeout(() => {
+                            cursor.classList.remove("expand");
+                        }, 500)
+                    })
                 };
             </script>
         </header>
+        <div class="cursor"></div>
         <!-- 內容 -->
         <main class="m-3" style="font-size: 20px;">
             <div class="text-dark text-center font-weight-bold ml-0">

@@ -6,5 +6,6 @@
   * https://ordersam.neocities.org/canvas/canvas.html
 * Bootstrap行動版【傳統首頁右上角行動版點進去】
   * https://ordersam.neocities.org/bootstrap/baby_mobil-1.html
-* Javascript簡單動畫(一隻貓跑過)
-  * 效果展示：https://ordersam.neocities.org/resume/me.html
+* Javascript簡單動畫
+  * 一隻貓跑過 + cursor動畫效果
+  * Demo影片：https://youtu.be/X4lojbiExVo
