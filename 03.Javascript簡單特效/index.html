@@ -14,6 +14,9 @@
     <script src="https://kit.fontawesome.com/d88869e178.js" crossorigin="anonymous"></script>
 
     <link href="./cursor.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <script src="./effect.js"></script>
 </head>
 </head>
 <body class="bg-backcolor" onload="init();">
@@ -91,53 +94,27 @@
                 </div>
             </nav>
             <img src="./images/cat.gif" style="width: 100px; position: absolute; right: -100px; z-index: -1;" id="cat">
-            <script>
-                // 速度
-                var speed = 10;
-                var cat = document.getElementById("cat");
-                var catwidth = parseInt(cat.style.width);
-                var disdance = parseInt(window.getComputedStyle(cat, null).left);
-                
-                // 移動
-                function getMove(speed){
-                    // 右邊距離
-                    var a = parseInt(window.getComputedStyle(cat, null).right);
-                    if (a + speed <= disdance + catwidth * 2) {
-                        cat.style.right = a + speed + 'px';
-                    }
-                    else {
-                        cat.style.right = '0px';
-                    };
-                    setTimeout(function(){
-                        getMove(speed);
-                    }, 100);
-                }
-
-                function init() {
-                    getMove(speed);
-                    // ============== cursor ==============
-                    const cursor = document.querySelector('.cursor');
-                    // 滑鼠移動事件 要找到cursor在頁面的位置(pageX、pageY)
-                    document.addEventListener('mousemove', e => {
-                        //console.log(e);
-                        cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
-                    })
-                    document.addEventListener('click', () => {
-                        cursor.classList.add("expand");
-                        setTimeout(() => {
-                            cursor.classList.remove("expand");
-                        }, 500)
-                    })
-                };
-            </script>
         </header>
         <div class="cursor"></div>
         <!-- 內容 -->
         <main class="m-3" style="font-size: 20px;">
-            <div class="text-dark text-center font-weight-bold ml-0">
-                <div>
+            <div class="text-dark text-center font-weight-bold ml-0" id="container1">
+                <div class="mt-3 animated op-0" data-animated="fadeIn">
                     <h1>It's always a cat here.</h1>
                 </div>
+                <hr class="bg-dark">
+                <div class="animated op-0" data-animated="flipInX">
+                    <h1>Test Infinte Scroll below</h1>
+                </div>
+                <div class="mt-3 animated op-0" data-animated="zoomIn">
+                    <img class="lazy img-fluid rounded" data-src="https://i.imgur.com/pHX1jsZ.jpg">
+                </div>
+                <hr class="bg-dark">
+                <div>
+                    <h1>Test Infinte Scroll below</h1>
+                </div>
+                <div id="js_infinite"></div>
+                <div id="js_detective"></div>
             </div>
             <hr class="bg-dark">
         </main>
@@ -145,40 +122,15 @@
             <div id="contactme" class="bg-dark text-light py-3 pl-3 align-items-center">
                 <div>
                     <div>
-                        <button class="btn btn-info text-light font-weight-bold py-2 px-3" style="font-size: 18px;" onclick="copy('idemail');">
+                        <button class="btn btn-info text-light font-weight-bold py-2 px-3" style="font-size: 18px;" id="btncopy" onclick="copy('idemail');">
                             <div>
                                 <i class="far fa-envelope"></i>
                                 <!-- <input id="idemail" value="goodbabyworker@gmail.com" size="28" onmouseover="this.style.cursor = 'pointer';"> -->
                                 <span id="idemail">goodbabyworker@gmail.com</span>
                             </div>
-                            <div class="alert alert-warning text-dark mt-1" id="copymsg" hidden>Email 複製成功</div>
                         </button>
-                        <script>
-                            function copy(id) {
-                                var element = document.getElementById(id);
-                                // === 法1 有實際可編輯區域 input、textarea 才可複製 ===
-                                // element.select();
-                                // document.execCommand('Copy');
-    
-                                // === 法2 創建input複製完再刪掉 ===
-                                const input = document.createElement('input');
-                                document.body.appendChild(input);
-                                input.setAttribute('value', element.innerHTML);
-                                input.select();
-                                if (document.execCommand('copy')) {
-                                    document.execCommand('copy');
-                                    console.log('複製成功');
-                                }
-                                document.body.removeChild(input);
-    
-                                // 使用者訊息
-                                var msg = document.getElementById('copymsg');
-                                msg.hidden = false;
-                                setTimeout(function(){
-                                    msg.hidden = true;
-                                }, 1000)
-                            }
-                        </script>
+                        <div class="text-light ml-3" id="copymsg" hidden>Email 複製成功</div>
+                        <script src="./copy.js"></script>
                     </div>
                     <div class="mt-1">
                         <a href="https://github.com/ordersam?tab=repositories" target="_new" class="alert-link btn btn-pink1 text-light">

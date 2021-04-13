@@ -8,6 +8,7 @@
 
 /* ============== 定義指標 ============== */
 .cursor {
+	z-index: -99;
 	width: 20px;
 	height: 20px;
 	border: 1px solid purple;
@@ -21,6 +22,7 @@
 }
 /* 偽元素定義背景 */
 .cursor::after {
+	z-index: -99;
 	content: "";
 	width: 20px;
 	height: 20px;
@@ -52,6 +54,7 @@
 
 /* ============== 定義滑鼠點擊事件 ============== */
 .expand {
+	z-index: 1;
 	animation: cursorAnim3 .5s forwards;
 	border: 1px solid blue;
 }
