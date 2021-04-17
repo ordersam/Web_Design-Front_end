@@ -224,7 +224,8 @@ function init() {
         cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
     })
     document.addEventListener('touchmove', e => {
-        cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
+        var touch = e.touches[0];
+        cursor.setAttribute("style", "top: " + (touch.pageY - 10) + "px; left: " + (touch.pageX - 10) + "px;");
     })
     document.addEventListener('click', () => {
         cursor.classList.add("expand");
