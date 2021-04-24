@@ -3,3 +3,33 @@
 .op-0 {
     opacity: 0
 }
+/* scroll進度條 */
+.baby_content {
+    position: relative;
+}
+.baby_content:before {
+    content: "";
+    display: block;
+    background: linear-gradient(to right top, #CDDC39 0%, #03A9F4 50%, #e6f0f5 50%);
+    height: calc(100% - 100vh + 6px);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.baby_content:after {
+    content: "";
+    display: block;
+    background: #e6f0f5;
+    height: calc(100vh - 6px);
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+}
+.entry-content {
+    position: relative;
+    z-index: 1;
+    margin-bottom: calc(-100vh + 6px);
+}

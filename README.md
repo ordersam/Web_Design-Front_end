@@ -13,4 +13,5 @@
     * 延遲載入圖片
     * 進場效果
     * 無限捲動
+	* Scroll進度條
   * Demo影片：https://youtu.be/eJKxyiVVqdI
