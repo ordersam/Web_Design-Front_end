@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI 民國日期選擇器（Datepicker）</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <!-- <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+    <script src="./assets/jquery-ui.js"></script>
+
+    <!-- 下載繁體版(datepicker-zh-TW)：https://github.com/jquery/jquery-ui/tree/main/ui/i18n -->
+    <script src="./assets/datepicker-zh-TW.js"></script>
+
+    <!-- 時分秒掛件 -->
+    <link rel="stylesheet" href="./assets/jquery-ui-timepicker-addon.css">
+    <script src="./assets/jquery-ui-timepicker-addon.js"></script>
+    <script src="./assets/jquery-ui-sliderAccess.js"></script>
+
+    <!-- 民國年 -->
+    <script src="./assets/roc.js"></script>
+    <style>
+        /* 關掉秒以下單位+時區 */
+        .ui_tpicker_second_label, .ui_tpicker_second, .ui_tpicker_millisec_label, .ui_tpicker_millisec, .ui_tpicker_microsec_label, .ui_tpicker_microsec, .ui_tpicker_timezone_label, .ui_tpicker_timezone {
+            display: none;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#datepicker1').datetimepicker({ 
+                dateFormat: 'yy/mm/dd',
+                timeFormat: 'HH:mm',
+                changeYear: true,
+                changeMonth: true,
+                showSecond: false,
+                //minDate: -20,
+                //maxDate: "+1M +10D"
+            });
+            $('#datepicker2').datepickerTW({
+                dateFormat: 'yy/mm/dd',
+                timeFormat: 'HH:mm',
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        西元日期 + 時分秒：<input type="text" id="datepicker1">
+    </p>
+    <p>
+        民國日期：<input type="text" id="datepicker2">
+    </p>
+</body>
+</html>
