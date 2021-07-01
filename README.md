@@ -18,3 +18,4 @@
 * JQueryDatepicker
   * 西元日期 + 時分
   * 民國日期
+  * 已中文化
