@@ -1,0 +1,8 @@
+@charset "utf-8";
+.s1 {
+    font-family: "Arial";
+    font-size: 20px;
+    color:rgb(230, 40, 7);
+    font-weight: bolder;
+    font-style: italic;
+}
